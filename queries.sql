@@ -31,5 +31,10 @@ COMMIT;
 
 ------------------------------
 
+BEGIN;
 
+DELETE FROM animals;
 
+SELECT * FROM animals;
+
+ROLLBACK;
