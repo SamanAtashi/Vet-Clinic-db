@@ -1,11 +1,24 @@
 /* Database schema to keep the structure of entire database. */
 
 CREATE TABLE animals (
-  id BIGSERIAL,    
+  id BIGSERIAL PRIMARY KEY,
   name varchar(100),
   date_of_birth date,
   escape_attempts int,
   neutered bool,
   weight_kg decimal,
-  species varchar(100)
+
+  owner_id BIGINT REFERENCES owners(id),
+  species_id BIGINT REFERENCES species(id)
+);
+
+CREATE TABLE owners (
+  id BIGSERIAL PRIMARY KEY,
+  full_name varchar(100),
+  age INT
+);
+
+CREATE TABLE species (
+  id BIGSERIAL PRIMARY KEY,
+  name varchar(100)
 );
