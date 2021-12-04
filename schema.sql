@@ -35,6 +35,7 @@ CREATE TABLE specializations (
 );
 
 CREATE TABLE visits (
+    visit_date DATE,
     vets_id BIGINT REFERENCES vets(id),
     animals_id BIGINT REFERENCES animals(id)
 );
