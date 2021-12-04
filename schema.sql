@@ -7,7 +7,6 @@ CREATE TABLE animals (
   escape_attempts int,
   neutered bool,
   weight_kg decimal,
-
   owner_id BIGINT REFERENCES owners(id),
   species_id BIGINT REFERENCES species(id)
 );
@@ -21,4 +20,21 @@ CREATE TABLE owners (
 CREATE TABLE species (
   id BIGSERIAL PRIMARY KEY,
   name varchar(100)
+);
+
+CREATE TABLE vets (
+    id BIGSERIAL PRIMARY KEY,
+    name varchar(100),
+    age INT,
+    date_of_graduation DATE 
+);
+
+CREATE TABLE specializations (
+    vets_id BIGINT REFERENCES vets(id),
+    species_id BIGINT REFERENCES species(id)
+);
+
+CREATE TABLE visits (
+    vets_id BIGINT REFERENCES vets(id),
+    animals_id BIGINT REFERENCES animals(id)
 );
