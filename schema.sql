@@ -45,3 +45,4 @@ ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 
 -- ---------------------------
 -- ALTER TABLE visits ADD COLUMN id BIGSERIAL PRIMARY KEY; 
+
