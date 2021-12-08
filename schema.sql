@@ -46,3 +46,6 @@ ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 -- ---------------------------
 -- ALTER TABLE visits ADD COLUMN id BIGSERIAL PRIMARY KEY; 
 
+-- Optimize first querie
+
+CREATE INDEX asc_animals ON visits(animals_id ASC);
