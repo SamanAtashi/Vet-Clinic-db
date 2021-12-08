@@ -49,3 +49,7 @@ ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 -- Optimize first querie
 
 CREATE INDEX asc_animals ON visits(animals_id ASC);
+
+-- Optimize first querie
+
+CREATE INDEX asc_vets ON visits(vets_id ASC);
